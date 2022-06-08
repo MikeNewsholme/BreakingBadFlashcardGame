@@ -64,8 +64,7 @@ cards[i].addEventListener("click", () => {
 //else unmatched fucntion
 function check(){
 if (cardPair.length == 2) {
-    if (
-        cardPair[0].querySelector("img").src ==
+    if (cardPair[0].querySelector("img").src ==
     cardPair[1].querySelector("img").src)
  {
     match()
@@ -83,9 +82,9 @@ function match() {
 cardPair[0].state = "blocked";
 cardPair[1].state = "blocked";
 cardPair = [];
-let score = document.querySelector("#scoreboard").innerHTML;
+let scoreboard = document.querySelector("#scoreboard").innerHTML;
 scoreboard++;
-document.querySelector("#scoreboard").innerHTML = score
+document.querySelector("#scoreboard").innerHTML = scoreboard
 
 }
 
@@ -111,21 +110,21 @@ function noMatch (stop1, stop2) {
 //************************************************** */
 //game timer function
 //needs to roll over 60 seconds to 1 minute
-function timer (){
-    let secs = 0;
-    let mins = 0;
-    let Sec;
-    let Min;
-    setInterval (() =>{
-        secs++;
-        if (secs == 60) {
-            secs = 0;
-            mins++
-        }
-        secs < 10 ? (Sec = `0${secs}`) : (Sec = `${secs}`);
-        mins < 10 ? (Min = `0${mins}`) : (Min = `${mins}`);
-        document.querySelector("#timer").innerHTML = `${Min}: ${Sec}`;
-    }, 1000)
+function timer() {
+  let secs = 0;
+  let mins = 0;
+  let SS;
+  let MM;
+  setInterval(() => {
+    secs++;
+    if (secs == 60) {
+      secs = 0;
+      mins++;
+    }
+    secs < 10 ? (SS = `0${secs}`) : (SS = `${secs}`);
+    mins < 10 ? (MM = `0${mins}`) : (MM = `${mins}`);
+    document.querySelector("#timer").innerHTML= `${MM}:${SS}`;
+  }, 1000);
 }
 
 //************************* */

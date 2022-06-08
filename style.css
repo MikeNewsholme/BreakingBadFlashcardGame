@@ -1,82 +1,71 @@
-body { margin:0;
-    padding:0;
-    background-image:url("assets/AGXN.gif");
-    background-repeat: no-repeat;
-    background-size: cover, cover;
-    
-
-
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("assets/AGXN.gif");
+  background-repeat: no-repeat;
+  background-size: cover, cover;
 }
 
-#container{
-    height: 600px;
-margin-right:25px;
-display:row;
-grid-template-rows:auto auto auto auto;
-
-
+#container {
+  height: 600px;
+  margin-right: 25px;
+  display: row;
+  grid-template-rows: auto auto auto auto;
+ 
 }
 
 img {
-width:100%;
-height:100%;
-border-radius:10px;
-
-
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
 }
 
-.cardShell { 
-    height:200px;
-    width: 150px;
-    background: transparent;
-    perspective: 1200px;
-    float: left;
-    margin-left: 40px;
-    margin-top: 20px;
-
+.cardShell {
+  height: 200px;
+  width: 150px;
+  background: transparent;
+  perspective: 1200px;
+  float: left;
+  margin-left: 40px;
+  margin-top: 20px;
 }
 
-.cardCore{
-    position:absolute;
-    height:100%;
-    width: 100%;
-    transform-style: preserve-3d;
-    transition: all 0.75s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 3);
+.cardCore {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: all 0.75s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 3);
+}
 
+.front,
+.back {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 3);
+}
+.front{
+color:rgba(22, 32, 220, 0.936);
+background-color:grey
 
 }
- 
+.back {
+  transform: rotateY(180deg);
+  
+  
+}
 
-.front, .back {
-    position:absolute;
-    height:100%;
-    width:100%;
-    backface-visibility: hidden;
-    background-color: black;
-    border-radius: 10px;
+#board {
+    height:85px; 
+    width:450px;
+    border:4px solid gold;
+    border-radius: 3px;
+    margin:auto;
     text-align:center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 3);
-
-
-
-}
-
-.back{
-    transform:rotateY(180deg);
-    background-image: url("blueDream.jpg");
-
-
-}
-
-#scoreboard {
-
-    height: 85px;
-    width: 450px;
-    border: 4px black;
-    border-radius: 10px;
-    margin: auto;
-    text-align:center;
-    margin-top: 15px;
-
+    margin-top:15px;
 }
