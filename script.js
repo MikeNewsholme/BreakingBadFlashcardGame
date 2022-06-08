@@ -19,18 +19,6 @@ shuffle();
 
 
 /*** NEED EVENT LISTENER FOR ALL CARDCORES */
-for (let i = 0; i < cards.length; i++){
-cards[i].addEventListener("click", () =>{
-    if(!click){
-        
-    }
-})
-
-}
-
-
-
-
 //*********************************************** */
 //if cards[] = unclicked
 //cards [] transform
@@ -40,30 +28,52 @@ cards[i].addEventListener("click", () =>{
 //else if cards [] = clicked
 // transform nothing
 // pair of cards array empty
-if (cards[i] = "unclicked"){
 
+for (let i = 0; i < cards.length; i++){
+cards[i].addEventListener("click", () => {
+    if(!click){
+        timer();
+    }
+    click = true;
+    if (cards[i].state =="unclicked") {
+        cards[i].style.transform = "rotateY(180deg)"
+        cards[i].state = "clicked";
+        cardPair.push(cards[i]) 
+        check()
+    }
+    else if (cards[i].state == "clicked"){
+        cards[i].style.transform = "rotateY(0deg)";
+        cards[i].state = "unclicked"
+
+        cardPair = [];
+
+    }
+});
 
 }
-else if (cards[i] = "clicked"){
 
 
 
-}
+
+
+
 
 //***************************** */
 // function to check cards
 //if card[0] = card[1] = match fucntion
 //else unmatched fucntion
 function check(){
-if(cardPair.length == 2){
-    if (cardPair[0].querySelector("img").src ==
+if (cardPair.length == 2) {
+    if (
+        cardPair[0].querySelector("img").src ==
     cardPair[1].querySelector("img").src)
-} match()
+ {
+    match()
 } else {
-    noMatch()
+    noMatch(cardPair[0], cardPair[1])
 }
-
-
+}
+}
 //*************************************** */
 //match function needs to update state of the div once two correct cards are matched, turn off event listener
 //cardpair 1 & 2 = blocked(event listener off)
@@ -73,9 +83,9 @@ function match() {
 cardPair[0].state = "blocked";
 cardPair[1].state = "blocked";
 cardPair = [];
-let score = document.querySelector(/*scoreboard */);
+let score = document.querySelector("#scoreboard").innerHTML;
 scoreboard++;
-document.querySelector(/*scoreboard*/).innerHTML = score
+document.querySelector("#scoreboard").innerHTML = score
 
 }
 
@@ -85,12 +95,12 @@ document.querySelector(/*scoreboard*/).innerHTML = score
 //card1 & card2.style.transform ), 750)
 //repeat above **cardpair 1 and 2 = blocked
 //pair of cards array empty again
-function noMatch () {
+function noMatch (stop1, stop2) {
     setTimeout(() => {
-        cardPair[1].state = "unclicked";
-        cardPair[0].state = "unclicked";
-        cardPair[1].style.transform = "rotateY(0deg)";
-        cardPair[0].style.transform = "rotateY(0deg)";
+        stop1.state = "unclicked";
+        stop2.state = "unclicked";
+        stop1.style.transform = "rotateY(0deg)";
+        stop2.style.transform = "rotateY(0deg)";
 
         }, 500);
         cardPair[0].state = "blocked";
