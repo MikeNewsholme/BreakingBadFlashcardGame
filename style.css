@@ -50,8 +50,12 @@ img {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 3);
 }
 .front{
-color:rgba(22, 32, 220, 0.936);
-background-color:grey
+
+color:#ab7f2e;
+background-color:#093009eb;
+font-family: cooper;
+font-size: 15px;
+
 
 }
 .back {
@@ -68,4 +72,5 @@ background-color:grey
     margin:auto;
     text-align:center;
     margin-top:15px;
+    font-family:cooper
 }
