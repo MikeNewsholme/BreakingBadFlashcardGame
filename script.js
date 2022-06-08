@@ -15,10 +15,22 @@ cards.forEach((card) =>{
     card.state = "unclicked";
 });
 
-//             SHUFFLE FUCNTION
+shuffle();
 
 
 /*** NEED EVENT LISTENER FOR ALL CARDCORES */
+for (let i = 0; i < cards.length; i++){
+cards[i].addEventListener("click", () =>{
+    if(!click){
+        
+    }
+})
+
+}
+
+
+
+
 //*********************************************** */
 //if cards[] = unclicked
 //cards [] transform
@@ -46,9 +58,9 @@ function check(){
 if(cardPair.length == 2){
     if (cardPair[0].querySelector("img").src ==
     cardPair[1].querySelector("img").src)
-} //MATCH FUNCTION
+} match()
 } else {
-    //UNMATCH FUNCTION
+    noMatch()
 }
 
 
@@ -88,7 +100,23 @@ function noMatch () {
 
 //************************************************** */
 //game timer function
-//need to reference
+//needs to roll over 60 seconds to 1 minute
+function timer (){
+    let secs = 0;
+    let mins = 0;
+    let Sec;
+    let Min;
+    setInterval (() =>{
+        secs++;
+        if (secs == 60) {
+            secs = 0;
+            mins++
+        }
+        secs < 10 ? (Sec = `0${secs}`) : (Sec = `${secs}`);
+        mins < 10 ? (Min = `0${mins}`) : (Min = `${mins}`);
+        document.querySelector("#timer").innerHTML = `${Min}: ${Sec}`;
+    }, 1000)
+}
 
 //************************* */
 //shuffle card function
@@ -99,8 +127,28 @@ function noMatch () {
 function shuffle() {
     let images = document.querySelectorAll('img');
     let srcs = [
-        //INSERT IMAGES
-    ] 
+        "assets/grandpa.jpg",
+        "assets/gusFace.jpg",
+        "assets/hank.jpg",
+        "assets/heisenburg.jpg",
+        "assets/Jesse.jpg",
+        "assets/mike.jpg",
+        "assets/Saul.jpg",
+        "assets/tuco.jpg",
+        "assets/waltJR.jpg",
+        "assets/walterundies.jpg",
+        "assets/grandpa.jpg",
+        "assets/gusFace.jpg",
+        "assets/hank.jpg",
+        "assets/heisenburg.jpg",
+        "assets/Jesse.jpg",
+        "assets/mike.jpg",
+        "assets/Saul.jpg",
+        "assets/tuco.jpg",
+        "assets/waltJR.jpg",
+        "assets/walterundies.jpg"
+        
+    ];
 /// for loop to shuffle cards
 // use .length -1 so we dont execute the loop one time too many 
 for (let i = srcs.length -1; i >0; i--){
@@ -111,7 +159,7 @@ for (let i = srcs.length -1; i >0; i--){
 }
 
 
-
+//ASSIGNS SRC PROPERY TO ALL IMAGE ELEMENTS
 for(let i = 0; i < images.length; i++){
     images[i].src = srcs[i]
 }
