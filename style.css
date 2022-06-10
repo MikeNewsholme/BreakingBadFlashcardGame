@@ -1,5 +1,5 @@
 body {
-  margin: 200px 50px 10px;
+  margin: 100px 50px 10px;
   padding: 0;
   background-image: url("assets/AGXN.gif");
   background-repeat: no-repeat;
@@ -12,6 +12,7 @@ body {
   margin-right: 25px;
   display: row;
   grid-template-rows: auto auto auto auto;
+  
  
 }
 
@@ -31,6 +32,7 @@ img {
   float: left;
   margin-left: 40px;
   margin-top: 20px;
+  
 }
 
 .cardCore {
@@ -40,6 +42,7 @@ img {
   transform-style: preserve-3d;
   transition: all 0.75s ease;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 3);
+  border-radius: 10px;
 }
 
 .front,
@@ -55,9 +58,9 @@ img {
 .front{
 
 color:#ab7f2e;
-background-color:#093009eb;
-font-family: cooper;
-font-size: 15px;
+background-color:#093009;
+font-family: 'Press Start 2P', cursive;
+font-size: 12px;
 
 
 }
@@ -68,7 +71,9 @@ font-size: 15px;
 }
 
 #board {
-  position:static;
+
+  position: absolute ;
+  bottom:10px;
     height:85px; 
     width:450px;
     border:4px solid gold;

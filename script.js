@@ -1,3 +1,4 @@
+
 ///going to need 4 divs for each card in HTML
 //need to name Div for query selector
 ///////////////////////////////////////////////////////////
@@ -16,6 +17,7 @@ cards.forEach((card) =>{
 });
 
 shuffle();
+
 
 
 /*** NEED EVENT LISTENER FOR ALL CARDCORES */
@@ -84,7 +86,12 @@ cardPair[1].state = "blocked";
 cardPair = [];
 let scoreboard = document.querySelector("#scoreboard").innerHTML;
 scoreboard++;
-document.querySelector("#scoreboard").innerHTML = scoreboard
+document.querySelector("#scoreboard").innerHTML = scoreboard;
+
+
+if (scoreboard == 10){
+    gameOver()
+}
 
 }
 
@@ -131,10 +138,9 @@ function timer() {
 //shuffle card function
 //query select IMG
 //declare array of pictures
-//need to invoke towards beginning of code
-
+//need to invoke towards beginning of cod
 function shuffle() {
-    let images = document.querySelectorAll('img');
+   let images = document.querySelectorAll('img');
     let srcs = [
         "assets/grandpa.jpg",
         "assets/gusFace.jpg",
@@ -149,7 +155,7 @@ function shuffle() {
         "assets/grandpa.jpg",
         "assets/gusFace.jpg",
         "assets/hank.jpg",
-        "assets/heisenburg.jpg",
+       "assets/heisenburg.jpg",
         "assets/Jesse.jpg",
         "assets/mike.jpg",
         "assets/Saul.jpg",
@@ -157,9 +163,10 @@ function shuffle() {
         "assets/waltJR.jpg",
         "assets/walterundies.jpg"
         
-    ];
+    ]; 
+
 /// for loop to shuffle cards
-// use .length -1 so we dont execute the loop one time too many 
+//// use .length -1 so we dont execute the loop one time too many 
 for (let i = srcs.length -1; i >0; i--){
     let j = Math.floor(Math.random() * i)
     let temporary = srcs[i];
@@ -168,15 +175,17 @@ for (let i = srcs.length -1; i >0; i--){
 }
 
 
-//ASSIGNS SRC PROPERY TO ALL IMAGE ELEMENTS
+////ASSIGNS SRC PROPERY TO ALL IMAGE ELEMENTS
 for(let i = 0; i < images.length; i++){
     images[i].src = srcs[i]
 }
 }
 
-/// Need to write gameover function :)
+///// Need to write gameover function :)
 
-
+function gameOver(){
+    alert("Thank you for playing")
+}
 
 
 
