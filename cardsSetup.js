@@ -1,3 +1,7 @@
+// This page is commented out due to functionality
+// This is as far as I got with the suggestions
+
+
 const cardArray = [
   {
     img: "assets/grandpa.jpg",
